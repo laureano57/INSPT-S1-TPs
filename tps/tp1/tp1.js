@@ -28,18 +28,9 @@
 
     // Si la longitud del numero devuelto es menor que la cantidad de bits, completo
     // los digitos que faltan segun corresponda
-    while (ret.length < bits) {
-      // Si es el ultimo bit (el de signo), agrego el bit correspondiente
-      if (ret.length == bits-1) {
-        (num < 0) ?
-          ret = 0 + ret :
-          ret = 1 + ret;
-      // Para el resto de los casos, relleno con 0 o 1 segun corresponda
-      } else {
-        (num < 0) ?
-          ret = 0 + ret :
-          ret = 1 + ret;
-      }
+
+    if (ret.length < bits) {
+      (num < 0) ? ret = 0 + ret : 0;
     }
 
     // Expresion regular para partir el string en un array
@@ -67,6 +58,10 @@
     $(".tp_baseNumerica").on('input', function () {
       var num = parseInt($(".tp_numero").val());
       var bits = parseInt($(this).val());
+      if (bits > 52) {
+        $(".tp_baseNumerica").val('52');
+        bits = 52;
+      }
       $(".tp_resultado").html(numToXs(num, bits));
     });
   });

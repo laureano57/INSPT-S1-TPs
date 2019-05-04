@@ -4,7 +4,6 @@ use warnings;
 
 use CGI qw(:standard);
 
-
 # Obtengo parametros del formulario (POST)
 my $numberToAiken = param("toAiken");
 my $numberToStibitz = param("toStibitz");
@@ -119,6 +118,10 @@ EOF
   <div class="wrapper row3">
     <footer id="footer">
       <p class="fl_left">INSPT - Tecnicatura Superior en Informática - 2019</p>
+      <p class="validators">
+        <a href="http://validator.w3.org/check?uri=referer"><img src="../../img/valid-html5.png" alt="Valid HTML 5" height="31" width="88"></a>&nbsp;&nbsp;&nbsp;
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../../img/vcss.gif" alt="CSS Válido!" height="31" width="88"></a>
+      </p>
     </footer>
   </div>
 </body>
