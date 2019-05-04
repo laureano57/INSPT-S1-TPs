@@ -4,6 +4,7 @@ use warnings;
 
 use CGI qw(:standard);
 
+
 # Obtengo parametros del formulario (POST)
 my $numberToAiken = param("toAiken");
 my $numberToStibitz = param("toStibitz");
@@ -12,23 +13,29 @@ my $numberToStibitz = param("toStibitz");
 my @bcdAiken = ("0000", "0001", "0010", "0011", "0100", "1011", "1100", "1101", "1110", "1111");
 my @stibitz = ("0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100");
 
-# Array vacio para armar el resultado
+# Creo array donde voy a ir construyendo el resultado
 my @output = ();
 
-# Separamos numero por numero y cargamos al array output numero por numero ya codificado
-for my $ch (split //, $numberToAiken) {
-   push(@output, @bcdAiken[int($ch)]);
+my $visibility = "hidden";
+
+# Si esta definida la variable, significa que se mando el parametro
+if (defined $numberToAiken) {
+  # En tal caso, convierto el numero recibido en un array de numeros
+  # e itero sobre cada uno de ellos, usando cada numero para llamar a su
+  # correspondiente valor del array (por ejemplo, 0 equivale a @bcdAiken[0])
+  for my $ch (split //, $numberToAiken) {
+    push(@output, @bcdAiken[int($ch)]);
+  }
+  $visibility = "initial";
 }
 
-# if ($numberToAiken != 0) {
-#   for my $ch (split //, $numberToAiken) {
-#     push(@output, @bcdAiken[int($ch)]);
-#   }
-# } else if ($numberToStibitz != 0){
-#   for my $ch2 (split //, $numberToStibitz) {
-#     push(@output, @stibitz[int($ch2)]);
-#   }
-# }
+# Repito para el caso de Stibitz
+if (defined $numberToStibitz) {
+  for my $ch (split //, $numberToStibitz) {
+    push(@output, @stibitz[int($ch)]);
+  }
+  $visibility = "initial";
+}
 
 # Imprimimos template
 print "Content-type: text/html\n\n";
@@ -40,9 +47,9 @@ print<<EOF;
 <head>
   <title>Sistemas de Computacion 1</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/styles.css" type="text/css">
-  <script src="../libs/jquery-3.4.1.min.js"></script>
-  <script src="../js/index.js"></script>
+  <link rel="stylesheet" href="../../css/styles.css" type="text/css">
+  <script src="../../libs/jquery-3.4.1.min.js"></script>
+  <script src="../../js/index.js"></script>
 </head>
 
 <body>
@@ -56,7 +63,7 @@ print<<EOF;
       <nav>
         <ul>
           <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
-          <li><a href="../assets/EnunciadoTPs2019.pdf">Consignas</a></li>
+          <li><a href="../../assets/EnunciadoTPs2019.pdf">Consignas</a></li>
           <li class="last"><a href="#">Integrantes</a></li>
         </ul>
       </nav>
@@ -65,50 +72,50 @@ print<<EOF;
   <!-- content -->
   <div class="wrapper row2">
     <div id="container" class="clear">
-      <!-- Aca va el contenido, carga por jQuery -->
-      <div id="tp-wrapper">
         <div id="tp-wrapper">
           <div class="tp-header">
             <h1>Trabajo Práctico Nº 2</h1>
             <h2>Codificadores BCD Aiken y Stibitz</h2>
           </div>
 
-          <form action="/cgi-bin/tp2.pl" method="post">
+          <form action="/tps/tp2/" method="post">
             <div class="form-wrapper-tp2">
               <p>Ingrese número a codificar en BCD Aiken:</p>
               <div class="input-wrapper">
-                <input type="number" min="0" placeholder="Cant. de digitos..." class="input-aiken"
-                  name="toAiken">
-                <input type="submit" value="Convertir">
+                <input type="number" min="0" placeholder="Ingrese un entero no negativo..." class="input-aiken"
+                  name="toAiken" value="$numberToAiken">
+                <input type="submit" value="Convertir" class="submit-aiken">
               </div>
             </div>
+          </form>
+          <form action="/tps/tp2/" method="post">
             <div class="form-wrapper-tp2">
               <p>Ingrese un número a codificar en Stibitz (XS-3):</p>
               <div class="input-wrapper">
-                <input type="number" placeholder="Numero entero..." class="input-stibitz" name="toStibitz">
-                <input type="submit" value="Convertir">
+                <input type="number" placeholder="Ingrese un entero no negativo..." class="input-stibitz"
+                name="toStibitz" value="$numberToStibitz">
+                <input type="submit" value="Convertir" class="submit-stibitz">
               </div>
             </div>
           </form>
 
-          <div class="form-wrapper">
+          <div class="tp2-resultado" style="visibility: $visibility">
             <p>Resultado:</p>
-            <h3 class="tp_resultado">
+            <p>
 EOF
 
 # Imprimo el numero codificado
   foreach my $num (@output) {
-    print "<span>$num </span>";
+    print "$num ";
   }
 
 # Termino de imprimir el template
   print<<EOF;
-            </h3>
+            </p>
           </div>
         </div>
     </div>
   </div>
-  <!-- Footer -->
   <div class="wrapper row3">
     <footer id="footer">
       <p class="fl_left">INSPT - Tecnicatura Superior en Informática - 2019</p>

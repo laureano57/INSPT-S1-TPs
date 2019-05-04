@@ -406,7 +406,7 @@ select {
 #tp-wrapper .form-wrapper-tp2 {
   display: flex;
   flex-flow: row;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
 }
 
@@ -432,14 +432,28 @@ select {
 }
 
 .tp_baseNumerica,
-.tp_numero,
-.input-aiken,
-.input-stibitz {
+.tp_numero {
   width: 40%;
 }
+.tp_baseNumerica,
+.tp_numero,
+.input-aiken,
+.input-stibitz,
+.submit-aiken,
+.submit-stibitz {
+  height: 30px;
+  font-size: 16px;
+}
 
-.input-wrapper {
-  width: 40%;
+.tp2-resultado {
+  display: flex;
+  flex-flow: row;
+  width: 90%;
+  justify-content: center;
+}
+
+.tp2-resultado p {
+  padding: 0px 20px;
 }
 
 /* ------Homepage-----*/
