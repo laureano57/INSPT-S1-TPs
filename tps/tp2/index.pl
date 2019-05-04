@@ -100,17 +100,17 @@ print<<EOF;
 
           <div class="tp2-resultado" style="visibility: $visibility">
             <p>Resultado:</p>
-            <p>
 EOF
 
-# Imprimo el numero codificado
+# Almaceno el numero codificado en una variable
+  my $out = '';
   foreach my $num (@output) {
-    print "$num ";
+    $out = $out . $num . " ";
   }
 
-# Termino de imprimir el template
+# Termino de imprimir el template con el numero codificado
   print<<EOF;
-            </p>
+            <p>$out</p>
           </div>
         </div>
     </div>
