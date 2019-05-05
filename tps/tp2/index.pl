@@ -48,7 +48,6 @@ print<<EOF;
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/styles.css" type="text/css">
   <script src="../../libs/jquery-3.4.1.min.js"></script>
-  <script src="../../js/index.js"></script>
 </head>
 
 <body>
@@ -68,7 +67,6 @@ print<<EOF;
       </nav>
     </header>
   </div>
-  <!-- content -->
   <div class="wrapper row2">
     <div id="container" class="clear">
         <div id="tp-wrapper">

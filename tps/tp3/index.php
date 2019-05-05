@@ -1,3 +1,7 @@
+<?php
+//   echo <<<EOL
+// EOL
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -6,7 +10,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/styles.css" type="text/css">
   <script src="../../libs/jquery-3.4.1.min.js"></script>
-  <script src="./tp1.js"></script>
 </head>
 
 <body>
@@ -20,24 +23,19 @@
       <nav>
         <ul>
           <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
-          <li><a href="assets/EnunciadoTPs2019.pdf">Consignas</a></li>
+          <li><a href="../../assets/EnunciadoTPs2019.pdf">Consignas</a></li>
           <li class="last"><a href="#">Integrantes</a></li>
         </ul>
       </nav>
     </header>
   </div>
-  <!-- content -->
+
   <div class="wrapper row2">
     <div id="container" class="clear">
       <div id="tp-wrapper">
         <div class="tp-header">
-          <h1>Trabajo Práctico Nº 1</h1>
-          <h2>Codificador en Exceso 2<sup>n-1</sup></h2>
-        </div>
-        <div class="tp-descripcion">
-          <p>Se debe ingresar la cantidad de bits que va a mostrar el resultado, además del número a convertir.</p>
-          <p>La cantidad de bits debe ser mayor a 0 y menor a 53, ya que el máximo valor seguro para un número entero en
-            JavaScript es 2<sup>53-1</sup></p>
+          <h1>Trabajo Práctico Nº 3</h1>
+          <h2>Compresor RLE</h2>
         </div>
         <div class="form-wrapper">
           <p>Ingrese cantidad de bits:</p>
@@ -54,15 +52,13 @@
       </div>
     </div>
   </div>
-  <!-- Footer -->
+
   <div class="wrapper row3">
     <footer id="footer">
       <p class="fl_left">INSPT - Tecnicatura Superior en Informática - 2019</p>
       <p class="validators">
-        <a href="http://validator.w3.org/check?uri=referer"><img src="../../img/valid-html5.png" alt="Valid HTML 5"
-            height="31" width="88"></a>&nbsp;&nbsp;&nbsp;
-        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../../img/vcss.gif" alt="CSS Válido!"
-            height="31" width="88"></a>
+        <a href="http://validator.w3.org/check?uri=referer"><img src="../../img/valid-html5.png" alt="Valid HTML 5" height="31" width="88"></a>&nbsp;&nbsp;&nbsp;
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../../img/vcss.gif" alt="CSS Válido!" height="31" width="88"></a>
       </p>
     </footer>
   </div>
