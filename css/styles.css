@@ -404,7 +404,7 @@ select {
   margin: 20px 0px;
   display: flex;
   flex-flow: row;
-  width: 60%;
+  width: 70%;
   justify-content: space-between;
   align-items: center;
 }

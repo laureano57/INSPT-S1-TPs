@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/styles.css" type="text/css">
   <script src="../../libs/jquery-3.4.1.min.js"></script>
+  <script src="../../libs/bignumber.js/bignumber.min.js"></script>
   <script src="./tp1.js"></script>
 </head>
 
@@ -20,7 +21,7 @@
       <nav>
         <ul>
           <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
-          <li><a href="assets/EnunciadoTPs2019.pdf">Consignas</a></li>
+          <li><a href="../../assets/EnunciadoTPs2019.pdf">Consignas</a></li>
           <li class="last"><a href="#">Integrantes</a></li>
         </ul>
       </nav>
@@ -36,12 +37,10 @@
         </div>
         <div class="tp-descripcion">
           <p>Se debe ingresar la cantidad de bits que va a mostrar el resultado, además del número a convertir.</p>
-          <p>La cantidad de bits debe ser mayor a 0 y menor a 53, ya que el máximo valor seguro para un número entero en
-            JavaScript es 2<sup>53-1</sup></p>
         </div>
         <div class="form-wrapper">
           <p>Ingrese cantidad de bits:</p>
-          <input type="number" min="0" max="52" placeholder="Cant. de bits..." class="tp_baseNumerica">
+          <input type="number" min="0" placeholder="Cant. de bits..." class="tp_baseNumerica">
         </div>
         <div class="form-wrapper">
           <p>Ingrese un número a codificar:</p>

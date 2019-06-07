@@ -2,7 +2,9 @@
 
   function numToXs(num, bits) {
     // Exceso 2^n-1 = numero + 2^bits-1
-    var xsBase10 = num + Math.pow(2, bits-1);
+    var xsBase10 = new BigNumber(BigNumber(2).pow(bits-1).plus(num));
+    // var xsBase10 = num + Math.pow(2, bits-1);
+
     // String para ir construyendo el binario
     var ret = '';
 
@@ -14,22 +16,23 @@
     // Si el numero ingresado es positivo y su modulo es mayor a 2^bits/2 - 1,
     // ó si es negativo y su modulo es mayor a 2^bits/2,
     // no se lo puede representar con tal cantidad de bits
-    if (num > 0 && (Math.abs(num) > Math.pow(2, bits)/2 - 1)) return "No se puede representar";
-    if (num < 0 && (Math.abs(num) > Math.pow(2, bits)/2)) return "No se puede representar";
+    if (num > 0 && (BigNumber(2).pow(bits).dividedBy(2).minus(1).isLessThan(Math.abs(num)))) return "No se puede representar";
+    if (num < 0 && (BigNumber(2).pow(bits).dividedBy(2).isLessThan(Math.abs(num)))) return "No se puede representar";
+    // if (num > 0 && (Math.abs(num) > Math.pow(2, bits)/2 - 1)) return "No se puede representar";
+    // if (num < 0 && (Math.abs(num) > Math.pow(2, bits)/2)) return "No se puede representar";
 
     // ######################
 
     // Convertimos el numero en base 10 a base 2
-    while (xsBase10 > 0) {
+    while (xsBase10.isGreaterThan(0)) {
       // Vamos concatenando el resto de la division al principio del string
-      ret = (xsBase10 % 2) + ret;
-      xsBase10 = Math.floor(xsBase10 / 2);
+      ret = xsBase10.modulo(2).toString() + ret;
+      xsBase10 = new BigNumber(xsBase10.dividedToIntegerBy(2));
     }
 
     // Si la longitud del numero devuelto es menor que la cantidad de bits, completo
     // los digitos que faltan segun corresponda
-
-    if (ret.length < bits) {
+    while (ret.length < bits) {
       (num < 0) ? ret = 0 + ret : 0;
     }
 
@@ -58,10 +61,6 @@
     $(".tp_baseNumerica").on('input', function () {
       var num = parseInt($(".tp_numero").val());
       var bits = parseInt($(this).val());
-      if (bits > 52) {
-        $(".tp_baseNumerica").val('52');
-        bits = 52;
-      }
       $(".tp_resultado").html(numToXs(num, bits));
     });
   });
