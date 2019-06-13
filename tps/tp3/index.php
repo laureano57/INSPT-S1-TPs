@@ -1,8 +1,4 @@
 <?php
-function toBin($input) {
-  $output = '';
-
-}
 
 // Comprime un numero en RLE-n, donde $bits es n y $inputNum es el binario a comprimir
 function toRle($inputNum, $bits) {
@@ -28,42 +24,57 @@ function toRle($inputNum, $bits) {
 
   // Creo un array a partir del numero (string) ingresado
   $inputNumArr = str_split($inputNum, 1);
-  // Creo el array de salida
-  $output = array('compNumber' => '', 'compRatio' => '');
 
   // Creo el array de subnumeros sobre el que voy a ir concatenando el numero original
   // partido segun 2^bits-1
   $subNumArr = array();
+  // Creo el auxiliar sobre el que voy a concatenar cada subnumero
   $auxSubNum = '';
+  // Creo la variable sobre la que voy a concatenar todos los subnumeros comprimidos
+  $compressed = '';
   $count = 0;
 
   // Recorro todos los numeros
-
   for($i = 0; $i < count($inputNumArr); $i++) {
-    // Voy concatenando numeros en un substring para ir creando el subnumero,
+    // Voy concatenando numeros en un substring auxiliar para ir creando el subnumero,
     // tambien voy contando los digitos encontrados para este subnumero.
     // Los subnumeros representan los fragmentos del numero original a codificar
     $auxSubNum .= $inputNumArr[$i];
     $count += 1;
 
-    // Si encontre un 1 o lei mas numeros que 2^n-1...
-    if (($count == (pow(2, $bits)-1)) || ($inputNumArr[$i] == '1')) {
-      // Agrego el subnumero al array de subnumeros
-      array_push($subNumArr, $auxSubNum);
+    // Si lei mas numeros que 2^n-1, encontre un 1 o llegue al final del array, corto
+    if (($count == (pow(2, $bits)-1)) || ($inputNumArr[$i] == '1') || ($i == count($inputNumArr)-1)) {
+      // Cuento la cantidad de ceros que tiene el substring, lo convierto a binario y le agrego ceros a la izquierda
+      // hasta completar la cantidad de bits de la compresion (para que devuelva binarios de $bits bits).
+      $auxSubNumComp = str_pad(decbin(substr_count($auxSubNum, '0')), $bits, '0', STR_PAD_LEFT);
+
+      // Hecho esto, agrego un array con el subnumero $auxSubNum y su binario RLE-n correspondiente al array $subNumArr
+      $subNumArr[] = array($auxSubNum => $auxSubNumComp);
+      // Voy concatenando los subnumeros comprimidos
+      $compressed .= $auxSubNumComp;
+      // Reseteo auxiliares
       $auxSubNum = '';
       $count = 0;
     }
-    // Si llegue al final del array, agrego el subnumero
-    if ($i == count($inputNumArr)-1) {
-      array_push($subNumArr, $auxSubNum);
-    }
   }
+  // Cuento longitud de entrada y salida
+  $input_len = strlen($inputNum);
+  $output_len = strlen($compressed);
 
-  return $subNumArr;
+  // Creo el array de salida con todos los datos
+  $output = array(
+    'original' => $inputNum,
+    'compressed' => $compressed,
+    'input_len' => $input_len,
+    'output_len' => $output_len,
+    'comp_ratio' => $input_len / $output_len
+  );
+
+  return $output;
 }
 
-$test = toRle('01101011100000000000010100000011010111111110000', 4);
-print('<pre>'.print_r('01101011100000000000010100000011010111111110000', true).'</pre>');
+$test = toRle('100000000000000001000000000000000100010000000000000000000000000100000100000010000000101100', 3);
+
 print('<pre>'.print_r($test, true).'</pre>'); die();
 
 ?>
