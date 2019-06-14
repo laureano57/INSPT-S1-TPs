@@ -48,8 +48,6 @@ function toRle($inputNum, $bits) {
       // hasta completar la cantidad de bits de la compresion (para que devuelva binarios de $bits bits).
       $auxSubNumComp = str_pad(decbin(substr_count($auxSubNum, '0')), $bits, '0', STR_PAD_LEFT);
 
-      // Hecho esto, agrego un array con el subnumero $auxSubNum y su binario RLE-n correspondiente al array $subNumArr
-      $subNumArr[] = array($auxSubNum => $auxSubNumComp);
       // Voy concatenando los subnumeros comprimidos
       $compressed .= $auxSubNumComp;
       // Reseteo auxiliares
@@ -73,9 +71,27 @@ function toRle($inputNum, $bits) {
   return $output;
 }
 
-$test = toRle('100000000000000001000000000000000100010000000000000000000000000100000100000010000000101100', 3);
+function maxRleComp($inputNum) {
+  $bit = 1;
+  $rleComp = toRle($inputNum, $bit);
+  $max = 0;
 
-print('<pre>'.print_r($test, true).'</pre>'); die();
+  while($max < $rleComp['comp_ratio']) {
+    $bit++;
+    $max = $rleComp['comp_ratio'];
+    $rleComp = toRle($inputNum, $bit);
+  }
+
+  return array(
+    'rleNum' => $bit,
+    'rleComp' => toRle($inputNum, $bit-1)
+  );
+}
+
+// $test = toRle('101000000000000000000111111111111111111111111010101010100100111110000000000000000000000000100010000100000100000010000000100000001', 2);
+// print('<pre>'.print_r($test, true).'</pre>'); die();
+// print('<pre>'.print_r(maxRleComp('0000000000001000000000000000000000000000001000000000000010100000000011100000001111'),true).'</pre>'); die();
+
 
 ?>
 <!DOCTYPE html>
@@ -119,7 +135,12 @@ print('<pre>'.print_r($test, true).'</pre>'); die();
         </div>
         <div class="form-wrapper">
           <p>Resultado:</p>
-          <h3 class="tp_resultado"></h3>
+          <h3 class="tp_resultado">
+            <?php 
+              $out = maxRleComp('0000000000001000000000000000000000000000001000000000000010100000000011100000001111');
+              echo '<p>' . $out['rleNum'] . '</p>';
+            ?> 
+          </h3>
         </div>
       </div>
     </div>
