@@ -62,7 +62,7 @@ print<<EOF;
         <ul>
           <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
           <li><a href="/consignas.html">Consignas</a></li>
-          <li class="last"><a href="#">Integrantes</a></li>
+          
         </ul>
       </nav>
     </header>

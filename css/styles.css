@@ -340,12 +340,17 @@ select {
 
 #header nav ul {
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #header nav li {
   display: inline;
-  margin-right: 25px;
   text-transform: uppercase;
+}
+
+#header nav {
+  width: 280px;
 }
 
 #header nav li.last {
