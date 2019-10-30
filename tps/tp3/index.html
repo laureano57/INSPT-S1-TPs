@@ -95,7 +95,7 @@
           $(".compressed").html(res.rleComp.compressed);
           $(".input_len").html(res.rleComp.input_len);
           $(".output_len").html(res.rleComp.output_len);
-          $(".comp_ratio").html(res.rleComp.comp_ratio);
+          $(".comp_ratio").html(res.rleComp.comp_ratio.toFixed(2));
           $(".result").removeClass('hide');
         });
       })
