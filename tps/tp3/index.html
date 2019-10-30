@@ -19,7 +19,7 @@
       <nav>
         <ul>
           <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
-          <li><a href="../../assets/EnunciadoTPs2019.pdf">Consignas</a></li>
+          <li><a href="/consignas.html">Consignas</a></li>
           <li class="last"><a href="#">Integrantes</a></li>
         </ul>
       </nav>
@@ -33,20 +33,41 @@
           <h1>Trabajo Práctico Nº 3</h1>
           <h2>Compresor RLE</h2>
         </div>
-        <div class="form-wrapper">
-          <p>Ingrese un número a comprimir:</p>
-          <input type="number" placeholder="Numero entero..." class="inputNumber">
-          <button id="send-number">Enviar</button>
+        <div class="container form-tp3">
+          <div class="form_row">
+            <p>Ingrese un número a comprimir:</p>
+            <button id="send-number">Comprimir</button>
+          </div>
+          <div class="form_row">
+            <input type="number" placeholder="Numero entero..." class="inputNumber">
+          </div>
         </div>
-        <div class="form-wrapper">
-          <p>Resultado:</p>
-          <div class="result">
-            <p class="rle-n"></p>
-            <p class="original"></p>
-            <p class="compressed"></p>
-            <p class="input_len"></p>
-            <p class="output_len"></p>
-            <p class="comp_ratio"></p>
+        <div class="container">
+          <div class="result hide">
+            <div class="result_row">
+              <p>Número de compresión RLE:</p>
+              <p class="result_content rle-n"></p>
+            </div>
+            <div class="result_row">
+              <p>Número original:</p>
+              <p class="result_content original"></p>
+            </div>
+            <div class="result_row">
+              <p>Número comprimido:</p>
+              <p class="result_content compressed"></p>
+            </div>
+            <div class="result_row">
+              <p>Longitud de entrada:</p>
+              <p class="result_content input_len"></p>
+            </div>
+            <div class="result_row">
+              <p>Longitud de salida:</p>
+              <p class="result_content output_len"></p>
+            </div>
+            <div class="result_row">
+              <p>Tasa de compresión:</p>
+              <p class="result_content comp_ratio"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -76,6 +97,7 @@
           $(".input_len").html(res.rleComp.input_len);
           $(".output_len").html(res.rleComp.output_len);
           $(".comp_ratio").html(res.rleComp.comp_ratio);
+          $(".result").removeClass('hide');
         });
       })
     }());

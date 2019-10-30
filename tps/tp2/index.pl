@@ -61,7 +61,7 @@ print<<EOF;
       <nav>
         <ul>
           <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
-          <li><a href="../../assets/EnunciadoTPs2019.pdf">Consignas</a></li>
+          <li><a href="/consignas.html">Consignas</a></li>
           <li class="last"><a href="#">Integrantes</a></li>
         </ul>
       </nav>
@@ -76,7 +76,7 @@ print<<EOF;
           </div>
 
           <form action="/tps/tp2/" method="post">
-            <div class="form-wrapper-tp2">
+            <div class="container-tp2">
               <p>Ingrese número a codificar en BCD Aiken:</p>
               <div class="input-wrapper">
                 <input type="number" min="0" placeholder="Ingrese un entero no negativo..." class="input-aiken"
@@ -86,7 +86,7 @@ print<<EOF;
             </div>
           </form>
           <form action="/tps/tp2/" method="post">
-            <div class="form-wrapper-tp2">
+            <div class="container-tp2">
               <p>Ingrese un número a codificar en Stibitz (XS-3):</p>
               <div class="input-wrapper">
                 <input type="number" placeholder="Ingrese un entero no negativo..." class="input-stibitz"
