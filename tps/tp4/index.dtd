@@ -1,0 +1,11 @@
+<!ELEMENT codes (row*)>
+<!ELEMENT row (position, gray, glixon, obrien, obrien2, excessGray, tompkins, tompkins2, petherick)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT gray (#PCDATA)>
+<!ELEMENT glixon (#PCDATA)>
+<!ELEMENT obrien (#PCDATA)>
+<!ELEMENT obrien2 (#PCDATA)>
+<!ELEMENT excessGray (#PCDATA)>
+<!ELEMENT tompkins (#PCDATA)>
+<!ELEMENT tompkins2 (#PCDATA)>
+<!ELEMENT petherick (#PCDATA)>

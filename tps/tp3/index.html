@@ -34,22 +34,18 @@
         </div>
         <div class="container form-tp3">
           <div class="form_row">
-            <p>Ingrese un número a comprimir:</p>
-            <button id="send-number">Comprimir</button>
+            <p>Ingrese un número binario a comprimir:</p>
+            <button class="tpButton" id="send-number">Comprimir</button>
           </div>
           <div class="form_row">
-            <input type="number" placeholder="Numero entero..." class="inputNumber">
+            <input id="binaryInput" type="number" placeholder="Numero entero..." class="inputNumber">
           </div>
         </div>
         <div class="container">
           <div class="result hide">
             <div class="result_row">
-              <p>Número de compresión RLE:</p>
+              <p>Mejor compresión:</p>
               <p class="result_content rle-n"></p>
-            </div>
-            <div class="result_row">
-              <p>Número original:</p>
-              <p class="result_content original"></p>
             </div>
             <div class="result_row">
               <p>Número comprimido:</p>
@@ -87,18 +83,27 @@
 <footer>
   <script>
     (function(){
+      // Post al archivo tp3.php
       $("#send-number").click(function() {
         $.post("/tps/tp3/tp3.php", {number: $(".inputNumber").val()}, function(result){
           var res = JSON.parse(result);
-          $(".rle-n").html(res.rleNum);
-          $(".original").html(res.rleComp.original);
+          $(".rle-n").html(`RLE-${res.rleNum}`);
           $(".compressed").html(res.rleComp.compressed);
           $(".input_len").html(res.rleComp.input_len);
           $(".output_len").html(res.rleComp.output_len);
           $(".comp_ratio").html(res.rleComp.comp_ratio.toFixed(2));
           $(".result").removeClass('hide');
         });
-      })
+      });
+      // Regex para validar input
+      $('#binaryInput').on('keypress', function (e) {
+        var binRegEx = /(0|1)/;
+        var key = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (!binRegEx.test(key)) {
+          e.preventDefault();
+          return false;
+        }
+      });
     }());
   </script>
 </footer>

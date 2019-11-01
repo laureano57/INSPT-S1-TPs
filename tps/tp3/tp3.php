@@ -14,7 +14,7 @@ function toRle($inputNum, $bits) {
     // …
     // 111 - 7 ceros y 1 uno
 
-  // La funcion deberia devolver el indice de compresion (los bits?) y el ratio de compresion
+  // La funcion deberia devolver el indice de compresion, los bits y el ratio de compresion
   // (salida/entrada). Esta funcion deberia ser usada por otra funcion que tome como parametro
   // la cantidad de indices de compresion con los que probar y la ejecute iterativamente,
   // juntando cada par de (indice_comp, ratio_comp) para analizar al final cual de todos los
@@ -91,8 +91,4 @@ function maxRleComp($inputNum) {
 $output = maxRleComp($_POST['number']);
 
 echo json_encode($output);
-
-// $test = toRle('101000000000000000000111111111111111111111111010101010100100111110000000000000000000000000100010000100000100000010000000100000001', 2);
-// print('<pre>'.print_r($test, true).'</pre>'); die();
-// print('<pre>'.print_r(maxRleComp('0000000000001000000000000000000000000000001000000000000010100000000011100000001111'),true).'</pre>'); die();
 ?>
