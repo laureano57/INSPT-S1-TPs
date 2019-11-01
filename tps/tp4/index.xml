@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "iso-8859-1" ?>
-<?xml-stylesheet type = "text/xsl" href = "index.xsl"?>
-<!DOCTYPE codes SYSTEM "index.dtd">
+<?xml-stylesheet type = "text/xsl" href = "styles.xsl"?>
+<!DOCTYPE codes SYSTEM "definitions.dtd">
 
 <codes>
   <row>
