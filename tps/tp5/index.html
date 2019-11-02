@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Sistemas de Computacion 1</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../css/styles.css" type="text/css">
+  <script src="../../libs/jquery-3.4.1.min.js"></script>
+  <script src="./tp5.js"></script>
+</head>
+
+<body>
+  <div class="wrapper row1">
+    <header id="header">
+      <div id="hgroup">
+        <h1>Sistemas de Computación I</h1>
+        <h2>Trabajos prácticos de la materia</h2>
+        <h2>Grupo 6 - Gonzalez, Olmedo, Stella</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a id="trabajos-practicos" href="/">Trabajos Prácticos</a></li>
+          <li><a href="/consignas.html">Consignas</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div class="wrapper row2">
+    <div id="container" class="clear">
+      <div id="tp-wrapper">
+        <div class="tp-header">
+          <h1>Trabajo Práctico Nº 5</h1>
+          <h2>El ciclo de instrucción</h2>
+        </div>
+        <div class="tp5-container">
+          <div class="tp5-row">
+            <div class="table-instructions">
+              <table class="tp5">
+                <tr>
+                  <th></th>
+                  <th>Pos.</th>
+                  <th>Código máquina</th>
+                  <th>Instrucción</th>
+                </tr>
+                <tr class="instructionRow" id="instNum-0">
+                  <td><span class="arrow">&gt;</span></td>
+                  <td>0100</td>
+                  <td>B96E56</td>
+                  <td>MOV CX,566E</td>
+                </tr>
+                <tr class="instructionRow" id="instNum-1">
+                  <td><span class="arrow">&gt;</span></td>
+                  <td>0103</td>
+                  <td>890E0010</td>
+                  <td>MOV [1000],CX</td>
+                </tr>
+                <tr class="instructionRow" id="instNum-2">
+                  <td><span class="arrow">&gt;</span></td>
+                  <td>0107</td>
+                  <td>030E0010</td>
+                  <td>ADD CX,[1000]</td>
+                </tr>
+                <tr class="instructionRow" id="instNum-3">
+                  <td><span class="arrow">&gt;</span></td>
+                  <td>010B</td>
+                  <td>89C8</td>
+                  <td>MOV AX,CX</td>
+                </tr>
+              </table>
+            </div>
+            <div class="table-status">
+              <table class="tp5">
+                <tr>
+                  <th>Instrucción</th>
+                  <th>AX</th>
+                  <th>CX</th>
+                  <th>[1000]</th>
+                </tr>
+                <tr>
+                  <td id="instValue">
+                    -
+                  </td>
+                  <td id="axValue">
+                    0000
+                  </td>
+                  <td id="cxValue">
+                    0000
+                  </td>
+                  <td id="memoryValue">
+                    0000
+                  </td>
+                </tr>
+              </table>
+              <div class="navInstructions">
+                <button class="tpButton" operation="prev">Instr. anterior</button>
+                <button class="tpButton" operation="next">Instr. siguiente</button>
+              </div>
+              <div class="tp5-description">
+                <p id="opDescription"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper row3">
+    <footer id="footer">
+      <p class="fl_left">INSPT - Tecnicatura Superior en Informática - 2019</p>
+      <p class="validators">
+        <a href="http://validator.w3.org/check?uri=referer"><img src="../../img/valid-html5.png" alt="Valid HTML 5"
+            height="31" width="88"></a>&nbsp;&nbsp;&nbsp;
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../../img/vcss.gif" alt="CSS Válido!"
+            height="31" width="88"></a>
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

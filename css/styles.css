@@ -159,7 +159,7 @@ div.wrapper.row3 {
   display: flex;
   align-items: center;
   align-self: flex-end;
-  height: 5%;
+  height: 45px;
 }
 
 .row1,
@@ -573,27 +573,28 @@ select {
 }
 
 .tp5-container {
-  width: 520px;
+  width: 100%;
+  /* width: 520px; */
   /* display: flex; */
   /* flex-flow: column; */
 }
 
-#tp-table {
+table {
   font-family: ubuntu;
   border-collapse: collapse;
   width: 100%;
 }
 
-#tp-table td, #tp-table th {
+table td, table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#tp-table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even){background-color: #f2f2f2;}
 
-#tp-table tr:hover {background-color: #ddd;}
+table tr:hover {background-color: #ddd;}
 
-#tp-table th {
+table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -601,19 +602,56 @@ select {
   color: white;
 }
 
-#tp-table.tp5 {
+table.tp5 {
   font-size: 14px;
   width: 100%;
+  text-align: center;
   margin: 5px 0 20px 0;
 }
 
-#tp-table.tp5 th {
+table.tp5 th {
   text-align: center;
+}
+
+.tp5 span {
+  visibility: hidden;
 }
 
 .navInstructions {
   display: flex;
   justify-content: space-between;
+  margin: 0 0 10px;
+}
+
+.tp5-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.instructionRow.active {
+  background-color: #ff9800b3;
+}
+
+.table-instructions {
+  width: 480px;
+}
+.table-status {
+  width: 480px;
+}
+
+.table-status table th {
+  width: 20%
+}
+
+.table-status table th:first-of-type {
+  width: 40%;
+}
+
+.tp5-description h5,
+.tp5-description p {
+  font-size: 15px;
+  text-transform: initial;
 }
 
 
