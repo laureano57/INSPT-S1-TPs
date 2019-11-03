@@ -35,8 +35,9 @@
           <h2>Códigos de distancia unitaria</h2>
         </div>
         <h5 class="tp4-source">
-          Fuente:
-          <a target="_blank" href="http://www.ahok.de/en/hoklas-code.html">http://www.ahok.de/en/hoklas-code.html</a>
+          Fuentes:<br/>
+          Codigos de distancia unitaria <a target="_blank" href="http://www.ahok.de/en/hoklas-code.html">(http://www.ahok.de/en/hoklas-code.html)</a><br/>
+          Position Sensing Angle and Distance Measurement for Engineers - Hans Walcher (1994)
         </h5>
         <div class="container tp5-container" style="text-align-last: center;">
           <table id="tp-table" class="tp5-table1">
