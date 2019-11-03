@@ -44,6 +44,7 @@
               <th>Exceso de Gray</th>
               <th colspan="2">Tompkins</th>
               <th>Petherick</th>
+              <th>Libaw-Craig</th>
             </tr>
             <xsl:for-each select="codes/row">
               <tr>
@@ -73,6 +74,9 @@
                 </td>
                 <td>
                   <xsl:value-of select="petherick"/><br/>
+                </td>
+                <td>
+                  <xsl:value-of select="libaw-craig"/><br/>
                 </td>
               </tr>
             </xsl:for-each>

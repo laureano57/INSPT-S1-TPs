@@ -1,5 +1,5 @@
 <!ELEMENT codes (row*)>
-<!ELEMENT row (position, gray, glixon, obrien, obrien2, excessGray, tompkins, tompkins2, petherick)>
+<!ELEMENT row (position, gray, glixon, obrien, obrien2, excessGray, tompkins, tompkins2, petherick, libaw-craig)>
 <!ELEMENT position (#PCDATA)>
 <!ELEMENT gray (#PCDATA)>
 <!ELEMENT glixon (#PCDATA)>
@@ -9,3 +9,4 @@
 <!ELEMENT tompkins (#PCDATA)>
 <!ELEMENT tompkins2 (#PCDATA)>
 <!ELEMENT petherick (#PCDATA)>
+<!ELEMENT libaw-craig (#PCDATA)>

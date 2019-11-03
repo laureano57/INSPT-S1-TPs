@@ -13,6 +13,7 @@
     <tompkins>0000</tompkins>
     <tompkins2>0010</tompkins2>
     <petherick>0101</petherick>
+    <libaw-craig>00000</libaw-craig>
   </row>
   <row>
     <position>1</position>
@@ -24,6 +25,7 @@
     <tompkins>0001</tompkins>
     <tompkins2>0011</tompkins2>
     <petherick>0001</petherick>
+    <libaw-craig>10000</libaw-craig>
   </row>
   <row>
     <position>2</position>
@@ -35,6 +37,7 @@
     <tompkins>0011</tompkins>
     <tompkins2>0111</tompkins2>
     <petherick>0011</petherick>
+    <libaw-craig>11000</libaw-craig>
   </row>
   <row>
     <position>3</position>
@@ -46,6 +49,7 @@
     <tompkins>0010</tompkins>
     <tompkins2>0101</tompkins2>
     <petherick>0010</petherick>
+    <libaw-craig>11100</libaw-craig>
   </row>
   <row>
     <position>4</position>
@@ -57,6 +61,7 @@
     <tompkins>0110</tompkins>
     <tompkins2>0100</tompkins2>
     <petherick>0110</petherick>
+    <libaw-craig>11110</libaw-craig>
   </row>
   <row>
     <position>5</position>
@@ -68,6 +73,7 @@
     <tompkins>1110</tompkins>
     <tompkins2>1100</tompkins2>
     <petherick>1110</petherick>
+    <libaw-craig>11111</libaw-craig>
   </row>
   <row>
     <position>6</position>
@@ -79,6 +85,7 @@
     <tompkins>1111</tompkins>
     <tompkins2>1101</tompkins2>
     <petherick>1010</petherick>
+    <libaw-craig>01111</libaw-craig>
   </row>
   <row>
     <position>7</position>
@@ -90,6 +97,7 @@
     <tompkins>1101</tompkins>
     <tompkins2>1001</tompkins2>
     <petherick>1011</petherick>
+    <libaw-craig>00111</libaw-craig>
   </row>
   <row>
     <position>8</position>
@@ -101,6 +109,7 @@
     <tompkins>1100</tompkins>
     <tompkins2>1011</tompkins2>
     <petherick>1001</petherick>
+    <libaw-craig>00011</libaw-craig>
   </row>
   <row>
     <position>9</position>
@@ -112,5 +121,6 @@
     <tompkins>1000</tompkins>
     <tompkins2>1010</tompkins2>
     <petherick>1101</petherick>
+    <libaw-craig>00001</libaw-craig>
   </row>
 </codes>
