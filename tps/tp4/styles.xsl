@@ -34,8 +34,12 @@
           <h1>Trabajo Práctico Nº 4</h1>
           <h2>Códigos de distancia unitaria</h2>
         </div>
-        <div class="container" style="text-align-last: center;">
-          <table id="tp-table">
+        <h5 class="tp4-source">
+          Fuente:
+          <a target="_blank" href="http://www.ahok.de/en/hoklas-code.html">http://www.ahok.de/en/hoklas-code.html</a>
+        </h5>
+        <div class="container tp5-container" style="text-align-last: center;">
+          <table id="tp-table" class="tp5-table1">
             <tr>
               <th>Posición</th>
               <th>Gray</th>
@@ -43,10 +47,9 @@
               <th colspan="2">O'Brien</th>
               <th>Exceso de Gray</th>
               <th colspan="2">Tompkins</th>
-              <th>Petherick</th>
               <th>Libaw-Craig</th>
             </tr>
-            <xsl:for-each select="codes/row">
+            <xsl:for-each select="data/codes/row">
               <tr>
                 <td>
                   <xsl:value-of select="position"/><br/>
@@ -73,19 +76,31 @@
                   <xsl:value-of select="tompkins2"/>
                 </td>
                 <td>
-                  <xsl:value-of select="petherick"/><br/>
+                  <xsl:value-of select="libaw-craig"/>
+                </td>
+              </tr>
+            </xsl:for-each>
+          </table>
+          <table id="tp-table" class="tp5-table2">
+            <tr>
+              <th>Posición</th>
+              <th colspan="2">Petherick</th>
+            </tr>
+            <xsl:for-each select="data/petherick-code/petherick-row">
+              <tr>
+                <td>
+                  <xsl:value-of select="position"/><br/>
                 </td>
                 <td>
-                  <xsl:value-of select="libaw-craig"/><br/>
+                  <xsl:value-of select="petherick0"/><br/>
+                </td>
+                <td>
+                  <xsl:value-of select="petherick1"/><br/>
                 </td>
               </tr>
             </xsl:for-each>
           </table>
         </div>
-        <h5 class="tp4-source">
-          Fuente:
-          <a target="_blank" href="http://www.ahok.de/en/hoklas-code.html">http://www.ahok.de/en/hoklas-code.html</a>
-        </h5>
       </div>
     </div>
   </div>

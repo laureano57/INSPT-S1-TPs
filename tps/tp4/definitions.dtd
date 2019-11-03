@@ -1,3 +1,4 @@
+<!ELEMENT data (codes, petherick-code)>
 <!ELEMENT codes (row*)>
 <!ELEMENT row (position, gray, glixon, obrien, obrien2, excessGray, tompkins, tompkins2, petherick, libaw-craig)>
 <!ELEMENT position (#PCDATA)>
@@ -8,5 +9,9 @@
 <!ELEMENT excessGray (#PCDATA)>
 <!ELEMENT tompkins (#PCDATA)>
 <!ELEMENT tompkins2 (#PCDATA)>
-<!ELEMENT petherick (#PCDATA)>
 <!ELEMENT libaw-craig (#PCDATA)>
+<!ELEMENT petherick-code (petherick-row*)>
+<!ELEMENT petherick-row (position, petherick0, petherick1)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT petherick0 (#PCDATA)>
+<!ELEMENT petherick1 (#PCDATA)>

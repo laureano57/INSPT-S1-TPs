@@ -572,12 +572,29 @@ select {
   text-transform: none;
 }
 
+.tp5-table1 {
+  max-width: 650px;
+}
+
+.tp5-table2 {
+  max-width: 400px;
+}
+
+.tp5-table2 tr th:first-child {
+  width: 80px;
+}
+
+
+
 .tp5-container {
-  width: 100%;
-  /* width: 520px; */
+  width: 100% !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
   /* display: flex; */
   /* flex-flow: column; */
 }
+
+
 
 table {
   font-family: ubuntu;
