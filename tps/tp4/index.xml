@@ -118,52 +118,52 @@
 
   <petherick-code>
     <petherick-row>
-      <position>0</position>
+      <position>00</position>
       <petherick0>1010</petherick0>
       <petherick1>1010</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>1</position>
+      <position>01</position>
       <petherick0>1010</petherick0>
       <petherick1>1110</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>2</position>
+      <position>02</position>
       <petherick0>1010</petherick0>
       <petherick1>1100</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>3</position>
+      <position>03</position>
       <petherick0>1010</petherick0>
       <petherick1>1101</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>4</position>
+      <position>04</position>
       <petherick0>1010</petherick0>
       <petherick1>1001</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>5</position>
+      <position>05</position>
       <petherick0>1010</petherick0>
       <petherick1>0001</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>6</position>
+      <position>06</position>
       <petherick0>1010</petherick0>
       <petherick1>0101</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>7</position>
+      <position>07</position>
       <petherick0>1010</petherick0>
       <petherick1>0100</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>8</position>
+      <position>08</position>
       <petherick0>1010</petherick0>
       <petherick1>0110</petherick1>
     </petherick-row>
     <petherick-row>
-      <position>9</position>
+      <position>09</position>
       <petherick0>1010</petherick0>
       <petherick1>0010</petherick1>
     </petherick-row>
