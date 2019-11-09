@@ -25,7 +25,7 @@ $instructions = array(
                 "rda" => array("data" => "0000"),
                 "mem1000" => array("data" => "0000"),
                 "mem1001" => array("data" => "0000"),
-                "description" => array("data" => "El puntero de instrucción IP envía la dirección 0100 al registro de instrucción RDI"),
+                "description" => array("data" => "El puntero de instrucción IP envía la dirección 0100 al registro de direcciones RDI"),
             ),
             "2" => array(
                 "ip" => array("data" => "0100"),
@@ -96,7 +96,7 @@ $instructions = array(
                 "rda" => array("data" => "B96E56"),
                 "mem1000" => array("data" => "0000"),
                 "mem1001" => array("data" => "0000"),
-                "description" => array("data" => "El puntero de instrucción IP envía la dirección 0103 al registro de instrucción RDI"),
+                "description" => array("data" => "El puntero de instrucción IP envía la dirección 0103 al registro de direcciones RDI"),
             ),
             "2" => array(
                 "ip" => array("data" => "0103"),
@@ -129,7 +129,7 @@ $instructions = array(
                 "rda" => array("data" => "B90E0010"),
                 "mem1000" => array("data" => "0000"),
                 "mem1001" => array("data" => "0000"),
-                "description" => array("data" => "Se carga el registro de instrucción RDI con la dirección de memoria [1000]"),
+                "description" => array("data" => "Se carga el registro de direcciones RDI con la dirección de memoria [1000]"),
             ),
             "5" => array(
                 "ip" => array("data" => "0103"),
@@ -178,7 +178,7 @@ $instructions = array(
                 "rda" => array("data" => "566E"),
                 "mem1000" => array("data" => "566E"),
                 "mem1001" => array("data" => "0000"),
-                "description" => array("data" => "El puntero de instrucción IP envía la dirección 0107 al registro de instrucción RDI"),
+                "description" => array("data" => "El puntero de instrucción IP envía la dirección 0107 al registro de direcciones RDI"),
             ),
             "2" => array(
                 "ip" => array("data" => "0107"),
@@ -211,7 +211,7 @@ $instructions = array(
                 "rda" => array("data" => "030E0010"),
                 "mem1000" => array("data" => "566E"),
                 "mem1001" => array("data" => "0000"),
-                "description" => array("data" => "Se carga el registro de instrucción RDI con la dirección de memoria [1000]"),
+                "description" => array("data" => "Se carga el registro de direcciones RDI con la dirección de memoria [1000]"),
             ),
             "5" => array(
                 "ip" => array("data" => "0107"),
@@ -271,7 +271,7 @@ $instructions = array(
                 "rda" => array("data" => "566E"),
                 "mem1000" => array("data" => "566E"),
                 "mem1001" => array("data" => "0000"),
-                "description" => array("data" => "El puntero de instrucción IP envía la dirección 010B al registro de instrucción RDI"),
+                "description" => array("data" => "El puntero de instrucción IP envía la dirección 010B al registro de direcciones RDI"),
             ),
             "2" => array(
                 "ip" => array("data" => "010B"),
