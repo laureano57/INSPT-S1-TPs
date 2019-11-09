@@ -584,6 +584,14 @@ select {
   width: 80px;
 }
 
+.memory-table {
+  width: 250px !important;
+}
+
+.registry-table {
+  width: 200px !important;
+}
+
 
 
 .tp5-container {
@@ -650,20 +658,27 @@ table.tp5 th {
   background-color: #ff9800b3;
 }
 
+tr.active {
+  background-color: #ff9800b3 !important;
+}
+
 .table-instructions {
   width: 480px;
 }
 .table-status {
-  width: 480px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 540px;
 }
 
-.table-status table th {
+/* .table-status table th {
   width: 20%
 }
 
 .table-status table th:first-of-type {
   width: 40%;
-}
+} */
 
 .tp5-description h5,
 .tp5-description p {
@@ -671,6 +686,17 @@ table.tp5 th {
   text-transform: initial;
 }
 
+.registry-wrapper {
+  display: flex;
+  flex-flow: column;
+}
+
+.registry-table th:nth-child(1) {
+  width: 110px;
+}
+.registry-table th:nth-child(2) {
+  width: 70px;
+}
 
 
 /* ------Homepage-----*/

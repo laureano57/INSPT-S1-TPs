@@ -35,71 +35,127 @@
         </div>
         <div class="tp5-container">
           <div class="tp5-row">
-            <div class="table-instructions">
-              <table class="tp5">
-                <tr>
-                  <th></th>
-                  <th>Pos.</th>
-                  <th>Código máquina</th>
-                  <th>Instrucción</th>
-                </tr>
-                <tr class="instructionRow" id="instNum-0">
-                  <td><span class="arrow">&gt;</span></td>
-                  <td>0100</td>
-                  <td>B96E56</td>
-                  <td>MOV CX,566E</td>
-                </tr>
-                <tr class="instructionRow" id="instNum-1">
-                  <td><span class="arrow">&gt;</span></td>
-                  <td>0103</td>
-                  <td>890E0010</td>
-                  <td>MOV [1000],CX</td>
-                </tr>
-                <tr class="instructionRow" id="instNum-2">
-                  <td><span class="arrow">&gt;</span></td>
-                  <td>0107</td>
-                  <td>030E0010</td>
-                  <td>ADD CX,[1000]</td>
-                </tr>
-                <tr class="instructionRow" id="instNum-3">
-                  <td><span class="arrow">&gt;</span></td>
-                  <td>010B</td>
-                  <td>89C8</td>
-                  <td>MOV AX,CX</td>
-                </tr>
-              </table>
-            </div>
             <div class="table-status">
-              <table class="tp5">
+              <table class="tp5 memory-table">
                 <tr>
-                  <th>Instrucción</th>
-                  <th>AX</th>
-                  <th>CX</th>
-                  <th>[1000]</th>
+                  <th colspan="2">Memoria Principal</th>
                 </tr>
                 <tr>
-                  <td id="instValue">
-                    -
-                  </td>
-                  <td id="axValue">
-                    0000
-                  </td>
-                  <td id="cxValue">
-                    0000
-                  </td>
-                  <td id="memoryValue">
-                    0000
-                  </td>
+                  <th>Posición</th>
+                  <th>Bytes</th>
+                </tr>
+                <tr>
+                  <td>0100 - 0102</td>
+                  <td>B96E56</td>
+                </tr>
+                <tr>
+                  <td>0103 - 0106</td>
+                  <td>890E0010</td>
+                </tr>
+                <tr>
+                  <td>0107 - 010A</td>
+                  <td>030E0010</td>
+                </tr>
+                <tr>
+                  <td>010B - 010C</td>
+                  <td>89C8</td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td>1000</td>
+                  <td id="mem1000">0000</td>
+                </tr>
+                <tr>
+                  <td>1001</td>
+                  <td id="mem1001">0000</td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
                 </tr>
               </table>
-              <div class="navInstructions">
-                <button class="tpButton" operation="prev">Instr. anterior</button>
-                <button class="tpButton" operation="next">Instr. siguiente</button>
-              </div>
-              <div class="tp5-description">
-                <p id="opDescription"></p>
+              <div class="registry-wrapper">
+                <table class="tp5 registry-table">
+                  <tr>
+                    <th>Registro CPU</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>IP</td>
+                    <td id="ip"></td>
+                  </tr>
+                  <tr>
+                    <td>RI</td>
+                    <td id="ri"></td>
+                  </tr>
+                  <tr>
+                    <td>AX</td>
+                    <td id="ax"></td>
+                  </tr>
+                  <tr>
+                    <td>CX</td>
+                    <td id="cx"></td>
+                  </tr>
+                  <tr>
+                    <td>RDI</td>
+                    <td id="rdi"></td>
+                  </tr>
+                  <tr>
+                    <td>RDA</td>
+                    <td id="rda"></td>
+                  </tr>
+                </table>
+                <div class="navSteps">
+                  <button class="tpButton" operation="prev">Paso anterior</button>
+                  <button class="tpButton" operation="next">Paso siguiente</button>
+                </div>
               </div>
             </div>
+            <div class="table-instructions">
+                <table class="tp5">
+                  <tr>
+                    <th></th>
+                    <th>Pos.</th>
+                    <th>Código máquina</th>
+                    <th>Instrucción</th>
+                  </tr>
+                  <tr class="instructionRow" id="instNum-0">
+                    <td><span class="arrow">&gt;</span></td>
+                    <td>0100</td>
+                    <td>B96E56</td>
+                    <td>MOV CX,566E</td>
+                  </tr>
+                  <tr class="instructionRow" id="instNum-1">
+                    <td><span class="arrow">&gt;</span></td>
+                    <td>0103</td>
+                    <td>890E0010</td>
+                    <td>MOV [1000],CX</td>
+                  </tr>
+                  <tr class="instructionRow" id="instNum-2">
+                    <td><span class="arrow">&gt;</span></td>
+                    <td>0107</td>
+                    <td>030E0010</td>
+                    <td>ADD CX,[1000]</td>
+                  </tr>
+                  <tr class="instructionRow" id="instNum-3">
+                    <td><span class="arrow">&gt;</span></td>
+                    <td>010B</td>
+                    <td>89C8</td>
+                    <td>MOV AX,CX</td>
+                  </tr>
+                </table>
+                <div class="navInstructions">
+                  <button class="tpButton" operation="prev">Instr. anterior</button>
+                  <button class="tpButton" operation="next">Instr. siguiente</button>
+                </div>
+                <div class="tp5-description">
+                  <p id="opDescription"></p>
+                  <p id="stepDescription"></p>
+                </div>
+              </div>
           </div>
         </div>
       </div>
